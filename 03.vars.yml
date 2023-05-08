@@ -33,3 +33,10 @@
         URL: task.example.com
 
 #only that task have that variable, other tasks c annot access it
+
+- name: variable from Roles
+  hosts: all
+  vars:
+    URL_play: play.example.com
+  roles:
+    - sample
