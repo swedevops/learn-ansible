@@ -12,3 +12,24 @@
 #quotes are manadory if value start vth variables
 #msg : {{ URL }} <- this requires quoting
 #msg :URL - {{ URL }} <- this doesnt require quoting
+- name: load vars from a file
+  hosts: all
+  vars_files:
+    - exvars.yml
+  tasks:
+    - name: print URL
+      ansible.builtin.debug:
+        msg: URL - {{ URL }}
+
+#vars_file doesnt support task level it is play level only
+
+- name: demo on task level variables
+  hosts: all
+  tasks:
+    - name: print URL
+      ansible.builtin.debug:
+        msg: URL - {{ URL }}
+      vars:
+        URL: task.example.com
+
+#only that task have that variable, other tasks c annot access it
