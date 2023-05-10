@@ -1,0 +1,7 @@
+- name: print a parameter
+  hosts: localhost
+  connect: local
+  tasks:
+    -  name: print a parameter
+       ansible.builtin.debug:
+         msg: {{ lookup('aws_ssm', 'test.test', region='us-east-1' ) }}
