@@ -3,8 +3,8 @@
   connection: local
   tasks:
     - name: Demo tasks on loops
-      ansible.builtin.debugg:
-        msg: fruit - {{ item }}
+      ansible.builtin.debug:
+        msg: fruit name - {{ item }}
         loop:
           - mango
           - kiwi
