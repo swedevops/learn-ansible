@@ -5,7 +5,7 @@
     - name: Demo tasks on loops
       ansible.builtin.debug:
         msg: fruit name - {{ item }}
-        loop:
+      loop:
           - mango
           - kiwi
           - banana
